@@ -6,6 +6,8 @@ build:
     - script:
         name: Print postgresql db list
         code: |-
+          echo "Password set to: $WERCKER_POSTGRESQL_PASSWORD"
           echo "$WERCKER_POSTGRESQL_PASSWORD" > .pgpass
           echo "$WERCKER_POSTGRESQL_PASSWORD" > ~/.pgpass
+          export PGPASSWORD="$WERCKER_POSTGRESQL_PASSWORD"
           psql  -U $WERCKER_POSTGRESQL_USERNAME --no-password -h $WERCKER_POSTGRESQL_HOST --list
