@@ -1,0 +1,8 @@
+box: wercker/default
+services:
+  - wercker/postgresql
+build:
+  steps:
+    - script:
+        name: Print postgresql db list
+        code: psql  -U $WERCKER_POSTGRESQL_USERNAME -h $WERCKER_POSTGRESQL_HOST --list
