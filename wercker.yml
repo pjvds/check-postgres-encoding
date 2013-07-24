@@ -7,4 +7,4 @@ build:
         name: Print postgresql db list
         code: |-
           echo "$WERCKER_POSTGRESQL_PASSWORD" > .pgpass
-          psql  -U $WERCKER_POSTGRESQL_USERNAME -h $WERCKER_POSTGRESQL_HOST --list
+          psql  -U $WERCKER_POSTGRESQL_USERNAME --no-password -h $WERCKER_POSTGRESQL_HOST --list
