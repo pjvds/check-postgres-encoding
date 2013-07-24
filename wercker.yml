@@ -5,4 +5,4 @@ build:
   steps:
     - script:
         name: Print postgresql db list
-        code: psql  -U $WERCKER_POSTGRESQL_USERNAME -h $WERCKER_POSTGRESQL_HOST --list
+        code: psql  -U $WERCKER_POSTGRESQL_USERNAME -P $WERCKER_POSTGRESQL_PASSWORD -h $WERCKER_POSTGRESQL_HOST --list
